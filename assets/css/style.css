@@ -1,0 +1,425 @@
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* MON CSS */
+
+
+:root {
+	--textColor: black;
+	--textColorW: white;
+	--margin-bot: 80px;
+	--text-size: 18px;
+	--title-size: 24px;
+	--back-color: #2A3439;
+	--footer-color: #36454F;
+}
+
+p {
+	color: var(--textColorW);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--back-color);
+}
+
+/* HEADER ----------------------- */
+
+.headerContainer {
+	height: 15vh;
+	background-color: var(--back-color);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.headerLinksContainer {
+	display: flex;
+	justify-content: space-around;
+	width: 30%;
+	flex: 1;
+}
+
+.logoContainer {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	width: 50px;
+	margin-right: 5px;
+}
+
+.logoName {
+	font-size: 28px;
+}
+
+.search {
+	border: none;
+	outline: none;
+	border-radius: 15px;
+	height: 30px;
+	padding-left: 5px;
+}
+
+.searchContainer {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.textLinkHeader {
+	color: var(--textColorW);
+	font-size: 24px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+
+}
+
+a:visited {
+	color: black;
+}
+
+
+/* MODAL ----------------------- */
+
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%; height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modalContainer {
+	background-color: white;
+	margin: 10% auto;
+	padding: 50px;
+	width: 30%; height: 60%;
+	border-radius: 8px;
+	position: relative;
+}
+
+.formContainer {
+	width: 100%; height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: left;
+	flex-direction: column;
+}
+
+.modalTitle {
+	font-size: var(--title-size);
+}
+
+.modalInput {
+	border-radius: 3px;
+	height: 30px;
+	width: 200px;
+	margin-bottom: 20px;
+}
+
+.modalSubmit {
+	width: 100px;
+	margin-bottom: 5px;
+}
+
+.openModalBtn {
+	cursor: pointer;
+}
+
+.close {
+	position: absolute;
+	top: 10px; right: 15px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+/* ACCUEIL ----------------------- */ 
+
+.accueilContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.booksCard {
+	width: 180px;
+	height: 280px;
+	border-radius: 10px;
+}
+
+.fondImg {
+	width: 50%;
+	margin-bottom: -50px;
+
+	-webkit-mask-image: 
+    linear-gradient(to top, transparent, black 20%, black 80%, transparent),
+    linear-gradient(to left, transparent, black 20%, black 80%, transparent);
+
+  mask-image: 
+    linear-gradient(to top, transparent, black 30%, black 50%, transparent),
+    linear-gradient(to left, transparent, black 20%, black 50%, transparent);
+
+  -webkit-mask-composite: intersect;
+  mask-composite: intersect;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.textContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: var(--margin-bot);
+	font-size: var(--title-size);
+	font-weight: 600;
+	height: 150px;
+}
+
+.button {
+	margin-bottom: var(--margin-bot);
+	height: 50px;
+	background-color: limegreen;
+	border: none;
+	border-radius: 10px;
+	color: white;
+	font-weight: 900;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.textAccueil {
+	margin-bottom: var(--margin-bot);
+	font-size: var(--text-size);
+}
+
+.cardContainer {
+	margin-bottom: var(--margin-bot);
+}
+
+/* REVIEW ----------------------- */
+
+.reviewListContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.reviewContainer {
+	width: 30%;
+}
+
+.reviewCardContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 14px;
+	border-bottom: 1px solid gray;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 50px;
+}
+
+.titreReview {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid gray;
+	font-size: 14px;
+	font-weight: 700;
+}
+/* LISTE */
+
+.listContainer {
+	margin-left: 50px;
+}
+
+.listCardContainer {
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+.userContainer {
+	display: flex;
+	align-items: center;
+}
+
+.titreListe {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid gray;
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+/* FOOTER */
+
+.footerContainer {
+	background-color: var(--footer-color);
+	width: 100%;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 50px;
+	margin-top: 100px;
+}
+
+.linksIconsContainer {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.footerLinkContainer {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.iconsContainer {
+	width: 50%;
+	margin-left: 50px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.footerLink {
+	color: var(--textColorW);
+}
+
+.footerIcons {
+	width: 15px;
+	color: var(--textColorW);
+}
+
+/* LIVRES */
+
+.livresContainer {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* LISTES ----------------------- */
+
+.listesContainer {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* MEMBRES */
+
+.membresContainer {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* A PROPOS */
+
+.proposContainer {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* TERMES ET SERVICES */
+
+.termesServicesContainer {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* CONTACT */
+
+.contactContainer {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
